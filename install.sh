@@ -19,6 +19,9 @@ if [[ "$CONFIRMATION" == "y" || "$CONFIRMATION" == "Y" ]]; then
 	echo "Installing File Manager and Utilities..."
 	sudo pacman -S thunar nautilus gvfs gvfs-mtp gvfs-google gvfs-afc gvfs-dnssd gvfs-goa gvfs-gphoto2 gvfs-nfs gvfs-onedrive gvfs-smb gvfs-wsdd xdg-user-dirs-gtk
 
+	echo "Installing Alacritty..."
+	sudo pacman -S alacritty
+
 	echo "Symlink the configuration file to folder .config ...."
 	mkdir -p ~/.config
 
@@ -26,6 +29,8 @@ if [[ "$CONFIRMATION" == "y" || "$CONFIRMATION" == "Y" ]]; then
     	ln -sfn "$(pwd)/waybar" ~/.config/waybar && check_status "Symlink waybar"
     	ln -sfn "$(pwd)/dunst" ~/.config/dunst && check_status "Symlink dunst"
     	ln -sfn "$(pwd)/rofi" ~/.config/rofi && check_status "Symlink rofi"
+	ln -sfn "$(pwd)/alacritty" ~/.config/rofi && check_status "Symlink alacritty"
+
 
 	echo "Success symlink the configuration files!"
 	echo "Installed Successfully"

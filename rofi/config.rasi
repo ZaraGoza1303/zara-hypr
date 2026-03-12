@@ -1,0 +1,87 @@
+configuration {
+  display-drun: "Apps:";
+  drun-window: "Windows:";
+  drun-display-format: "{icon} {name}";
+  modes: "window,drun,run";
+  font: "JetBrainsMono Nerd Font 12";
+  show-icons: true;
+}
+
+@theme "/dev/nul"
+
+* {
+  bg: #061E29;
+  second-bg: #1B3C53;
+  accent: #4DB5BD; /* Warna tambahan untuk pemanis */
+  text-color: #FFFDE1;
+
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  spacing: 0;
+}
+
+window {
+  width: 40%;
+  background-color: @bg;
+  border: 2px;
+  border-color: @second-bg;
+  border-radius: 12px;
+}
+
+mainbox {
+  padding: 15px;
+  children: [ inputbar, listview ];
+}
+
+/* Bagian Input (Pencarian) */
+inputbar {
+  background-color: @second-bg;
+  children: [ prompt, entry ];
+  border-radius: 8px;
+  margin: 0 0 15px 0;
+  padding: 10px;
+}
+
+prompt {
+  padding: 0 10px 0 5px;
+  text-color: @accent;
+  font: "JetBrainsMono Nerd Font Bold 12";
+}
+
+entry {
+  placeholder: "Cari...";
+  placeholder-color: @accent;
+}
+
+/* Bagian List Hasil */
+listview {
+  layout: vertical;
+  spacing: 5px;
+  lines: 8;
+  fixed-height: true;
+}
+
+element {
+  padding: 8px;
+  border-radius: 6px;
+  orientation: horizontal;
+  cursor: pointer;
+}
+
+element-icon {
+  size: 24px;
+  padding: 0 10px 0 0;
+}
+
+element-text {
+  vertical-align: 0.5;
+  text-color: inherit;
+}
+
+/* Efek saat dipilih */
+element selected {
+  background-color: @second-bg;
+  text-color: @accent;
+}

@@ -1,4 +1,4 @@
-# zara-dots
+# zara-hypr
 
 Dotfiles for my **Arch Linux + Hyprland** setup.
 Contains only the **look / ricing** — not applications.
@@ -23,7 +23,7 @@ Consistent palette: bg `#0a0a0a`, text `#e0e0e0`, accent `#ff5555`
 
 ```bash
 sudo pacman -S --needed git
-git clone https://github.com/ZaraGoza1303/zara-dots.git
+git clone https://github.com/ZaraGoza1303/zara-hypr.git
 cd zara-dots
 ./install.sh
 ```

@@ -45,7 +45,9 @@ cp -r "$DOTDIR/extra/themes/Nordic-darker-v40" "$HOME/.themes/"
     cp "$DOTDIR/assets/wallpaper/arch.png" "$HOME/Pictures/Wallpaper/"
 
 # 6. Make fish the login shell
-[[ "$SHELL" != *fish* ]] && chsh -s /usr/bin/fish
+if [[ "$SHELL" != *fish* ]] && command -v fish >/dev/null; then
+    chsh -s "$(command -v fish)" || echo "Could not change shell — run manually: chsh -s /usr/bin/fish"
+fi
 
 # 7. Git identity
 read -rp "Git name [ZaraGoza1303]: " git_name

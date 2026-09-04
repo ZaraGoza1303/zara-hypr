@@ -1,7 +1,7 @@
 # zara-hypr
 
 Dotfiles for my **Arch Linux + Hyprland** setup.
-Contains only the **look / ricing** — not applications.
+Contains only the **look / ricing** .
 
 ## Setup
 
@@ -37,7 +37,7 @@ What it does:
 5. Installs the GTK theme + wallpaper
 6. Sets fish as the login shell
 
-Then **reboot** — Hyprland auto-starts from TTY1 (via fish).
+Then **reboot** Hyprland auto-starts from TTY1 (via fish).
 
 Skip package installation: `./install.sh --no-pkgs`
 

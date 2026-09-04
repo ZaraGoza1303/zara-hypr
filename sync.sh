@@ -29,7 +29,4 @@ done
 
 find "$DOTDIR" -name '*.bak' -delete
 
-cd "$DOTDIR"
-git add -A
-git commit -m "sync dots $(date +%Y-%m-%d)" || true
-echo "Done. Now run: git push"
+echo "Done."

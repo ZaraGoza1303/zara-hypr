@@ -10,9 +10,10 @@ SKIP_PKGS=0
 
 # 1. Install yay
 command -v yay >/dev/null || {
-    git clone https://aur.archlinux.org/yay.git /tmp/yay-build
+    curl -L -o /tmp/yay.tar.gz https://aur.archlinux.org/cgit/aur.git/snapshot/yay.tar.gz
+    mkdir -p /tmp/yay-build && tar -xf /tmp/yay.tar.gz -C /tmp/yay-build --strip-components=1
     (cd /tmp/yay-build && makepkg -si --noconfirm)
-    rm -rf /tmp/yay-build
+    rm -rf /tmp/yay.tar.gz /tmp/yay-build
 }
 
 # 2. Install packages (look-only, see packages/)
@@ -48,12 +49,6 @@ cp -r "$DOTDIR/extra/themes/Nordic-darker-v40" "$HOME/.themes/"
 if [[ "$SHELL" != *fish* ]] && command -v fish >/dev/null; then
     chsh -s "$(command -v fish)" || echo "Could not change shell — run manually: chsh -s /usr/bin/fish"
 fi
-
-# 7. Git identity
-read -rp "Git name [ZaraGoza1303]: " git_name
-read -rp "Git email [mantapucoco@gmail.com]: " git_email
-git config --global user.name  "${git_name:-ZaraGoza1303}"
-git config --global user.email "${git_email:-mantapucoco@gmail.com}"
 
 # Done
 echo "Done. Old configs backed up to: $BACKUP"

@@ -1,6 +1,6 @@
 # zara-dots
 
-Dotfiles for my **Arch Linux + Hyprland** setup (Farhan / ZaraGoza1303).
+Dotfiles for my **Arch Linux + Hyprland** setup.
 Contains only the **look / ricing** — not applications.
 
 ## Setup
@@ -31,12 +31,11 @@ cd zara-dots
 What it does:
 
 1. Installs `yay` if missing
-2. Installs packages (44 official + 5 AUR) — lists in `packages/`, `#` comments are skipped
+2. Installs packages (45 official + 5 AUR) — lists in `packages/`, `#` comments are skipped
 3. Backs up existing configs to `~/.config-backup-<date>/`
 4. Copies configs into `~/.config` and dotfiles into `~`
 5. Installs the GTK theme + wallpaper
 6. Sets fish as the login shell
-7. Asks for git identity
 
 Then **reboot** — Hyprland auto-starts from TTY1 (via fish).
 
@@ -47,7 +46,7 @@ Skip package installation: `./install.sh --no-pkgs`
 ```
 zara-dots/
 ├── install.sh              # install (repo → system)
-├── sync.sh                 # update repo (system → repo), auto-commits
+├── sync.sh                 # update repo (system → repo)
 ├── packages/
 │   ├── official.txt        # 44 official packages (look-only)
 │   └── aur.txt             # 5 AUR packages
@@ -65,7 +64,6 @@ zara-dots/
 - `playerctl`, `hyprpolkitagent`, `xsettingsd` are included on purpose even though
   the old system only had them as deps / didn't have them at all — my configs reference them.
 - GPU is AMD (`vulkan-radeon`). On NVIDIA, add your own drivers.
-- `.git-credentials` is deliberately not in this repo (it contains passwords).
 
 ## Keeping it up to date
 

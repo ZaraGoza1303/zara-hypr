@@ -35,10 +35,9 @@ done
     cp -r /usr/share/themes/Nordic-darker-v40 "$DOTDIR/extra/themes/"
 
 # Package lists (selalu fresh dari pacman)
-# ZCode & yay-debug di-skip karena bukan bagian dari setup ricing.
 pacman -Qqe | sort > /tmp/zara-all.txt
 pacman -Qqm | sort > /tmp/zara-aur.txt
-comm -23 /tmp/zara-all.txt /tmp/zara-aur.txt | grep -vE '^(ZCode|yay-debug)$' > "$DOTDIR/packages/official.txt"
+comm -23 /tmp/zara-all.txt /tmp/zara-aur.txt > "$DOTDIR/packages/official.txt"
 
 # Wallpaper
 [[ -f "$HOME/Pictures/Wallpaper/arch.png" ]] && \

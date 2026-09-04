@@ -1,2 +1,5 @@
 *.bak
+*.hl.bak
 *~
+.config-backup-*/
+hyprland.conf.bak

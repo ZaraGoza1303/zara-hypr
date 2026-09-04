@@ -1,3 +1,0 @@
-export MOZ_ENABLE_WAYLAND=1
-export MOZ_USE_PIPEWIRE=1
-

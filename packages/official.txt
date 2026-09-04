@@ -1,5 +1,5 @@
-# Hanya paket untuk menjalankan & menampilkan ricing.
-# Aplikasi (browser, editor, db, dll) tidak termasuk.
+# Only the packages needed to run the rice.
+# Apps (browser, editor, db, etc.) are NOT included.
 
 # Hyprland stack
 hyprland
@@ -13,23 +13,24 @@ xdg-utils
 qt5-wayland
 qt6-wayland
 
-# Bar, launcher, notifikasi
+# Bar, launcher, notifications
 waybar
 rofi
 dunst
 
-# Terminal & font
+# Terminal, fish & fonts
+fish
 alacritty
 fastfetch
 ttf-jetbrains-mono-nerd
 noto-fonts-cjk
 
-# Keybind: screenshot & clipboard
+# Keybinds: screenshot & clipboard
 grim
 slurp
 wl-clipboard
 
-# Keybind: volume & brightness
+# Keybinds: volume & brightness
 pipewire
 pipewire-alsa
 pipewire-pulse
@@ -47,7 +48,7 @@ network-manager-applet
 nwg-look
 xsettingsd
 
-# File manager (keybind Super+E) & image viewer (mimeapps)
+# File manager (Super+E keybind) & image viewer (mimeapps)
 nautilus
 imv
 

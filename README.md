@@ -1,25 +1,25 @@
 # zara-dots
 
-Dotfiles untuk setup **Arch Linux + Hyprland** milik Farhan (ZaraGoza1303).
-Isinya khusus **tampilan / ricing** — bukan aplikasi.
+Dotfiles for my **Arch Linux + Hyprland** setup (Farhan / ZaraGoza1303).
+Contains only the **look / ricing** — not applications.
 
 ## Setup
 
 - **WM**: Hyprland + hyprlock, hyprpaper, hypridle, hyprmod
+- **Shell**: fish (Hyprland auto-starts from TTY1)
 - **Bar**: Waybar (black clean theme)
 - **Launcher**: Rofi (dark, JetBrains Mono)
-- **Notifikasi**: Dunst
+- **Notifications**: Dunst
 - **Terminal**: Alacritty (bg `#0a0a0a`, JetBrainsMono Nerd Font)
-- **Editor**: Neovim (LazyVim, plugin ter-lock via `lazy-lock.json`)
+- **Editor**: Neovim (LazyVim, plugins locked via `lazy-lock.json`)
 - **Visualizer**: Cava + shaders
-- **GTK**: Nordic-darker-v40 + WhiteSur-dark (theme ikut di repo)
-- **Wallpaper**: `~/Pictures/Wallpaper/arch.png` (ikut di repo)
-- **Shell**: Bash + Hyprland auto-start dari TTY
+- **GTK**: Nordic-darker-v40 + WhiteSur-dark (theme included in repo)
+- **Wallpaper**: `~/Pictures/Wallpaper/arch.png` (included in repo)
 
-Warna konsisten: bg `#0a0a0a`, text `#e0e0e0`, accent `#ff5555`
+Consistent palette: bg `#0a0a0a`, text `#e0e0e0`, accent `#ff5555`
 (waybar, rofi, alacritty, dunst).
 
-## Pakai di install Arch baru
+## Use on a fresh Arch install
 
 ```bash
 sudo pacman -S --needed git
@@ -28,41 +28,49 @@ cd zara-dots
 ./install.sh
 ```
 
-Langkah yang dijalankan:
+What it does:
 
-1. Install `yay` kalau belum ada
-2. Install paket (44 official + 5 AUR) — daftar di `packages/`, komentar `#` di list di-skip
-3. Backup config lama ke `~/.config-backup-<tanggal>/`
-4. Salin config ke `~/.config` dan dotfiles ke `~`
-5. Pasang theme + wallpaper
-6. Set identitas git (ditanya dulu)
-7. Path `/home/farhan` di `.bashrc`/`.bash_profile` otomatis diganti `$HOME`
+1. Installs `yay` if missing
+2. Installs packages (44 official + 5 AUR) — lists in `packages/`, `#` comments are skipped
+3. Backs up existing configs to `~/.config-backup-<date>/`
+4. Copies configs into `~/.config` and dotfiles into `~`
+5. Installs the GTK theme + wallpaper
+6. Sets fish as the login shell
+7. Asks for git identity
 
-Lalu **reboot** — Hyprland auto start dari TTY.
+Then **reboot** — Hyprland auto-starts from TTY1 (via fish).
 
-Skip install paket: `./install.sh --no-pkgs`
+Skip package installation: `./install.sh --no-pkgs`
 
-## Struktur
+## Structure
 
 ```
 zara-dots/
-├── install.sh              # pasang (repo → sistem)
-├── sync.sh                 # update repo (sistem → repo), auto commit
+├── install.sh              # install (repo → system)
+├── sync.sh                 # update repo (system → repo), auto-commits
 ├── packages/
-│   ├── official.txt        # 44 paket official (look-only)
-│   └── aur.txt             # 5 paket AUR
+│   ├── official.txt        # 44 official packages (look-only)
+│   └── aur.txt             # 5 AUR packages
 ├── config/                 # → ~/.config/
-├── home/                   # → ~/ (.bashrc, .gitconfig, dll)
-├── extra/themes/           # Nordic-darker-v40 (bukan dari pacman)
+├── home/                   # → ~/ (.gitconfig, .gtkrc-2.0)
+├── extra/themes/           # Nordic-darker-v40 (not from pacman)
 └── assets/wallpaper/       # arch.png
 ```
 
-## Catatan
+## Notes
 
-- Package list dijaga **look-only**: Hyprland stack, waybar, rofi, dunst,
-  alacritty, font, theme, tool screenshot/volume/brightness, cava, nautilus.
-  Browser, Ollama, database, VPN, dll **tidak** termasuk — install sendiri kalau perlu.
-- `playerctl`, `hyprpolkitagent`, `xsettingsd` sengaja dimasukkan walau di sistem
-  lama cuma ada sebagai dep / belum terpasang — config kamu memang mereferensikannya.
-- GPU AMD (`vulkan-radeon`). Kalau NVIDIA, tambahkan driver sendiri.
-- `.git-credentials` sengaja tidak masuk repo (isinya password).
+- Package lists are kept **look-only**: Hyprland stack, waybar, rofi, dunst,
+  alacritty, fonts, theme, screenshot/volume/brightness tools, cava, nautilus.
+  Browsers, Ollama, databases, VPNs, etc. are **not** included — install those yourself.
+- `playerctl`, `hyprpolkitagent`, `xsettingsd` are included on purpose even though
+  the old system only had them as deps / didn't have them at all — my configs reference them.
+- GPU is AMD (`vulkan-radeon`). On NVIDIA, add your own drivers.
+- `.git-credentials` is deliberately not in this repo (it contains passwords).
+
+## Keeping it up to date
+
+After changing configs on the system, run:
+
+```bash
+./sync.sh && git push
+```

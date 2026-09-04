@@ -1,4 +1,4 @@
-# AUR — hanya yang terkait tampilan/setup desktop
+# AUR — appearance/desktop setup related only
 yay
 bibata-cursor-theme
 whitesur-icon-theme

@@ -24,7 +24,7 @@ Consistent palette: bg `#0a0a0a`, text `#e0e0e0`, accent `#ff5555`
 ```bash
 sudo pacman -S --needed git
 git clone https://github.com/ZaraGoza1303/zara-hypr.git
-cd zara-dots
+cd zara-hypr
 ./install.sh
 ```
 
@@ -44,7 +44,7 @@ Skip package installation: `./install.sh --no-pkgs`
 ## Structure
 
 ```
-zara-dots/
+zara-hypr/
 ├── install.sh              # install (repo → system)
 ├── sync.sh                 # update repo (system → repo)
 ├── packages/

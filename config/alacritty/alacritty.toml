@@ -1,0 +1,87 @@
+[window]
+opacity = 0.92
+decorations = "None"
+
+[window.padding]
+x = 30
+y = 30
+
+[scrolling]
+history = 5000
+
+[font]
+normal = { family = "JetBrainsMono Nerd Font Mono", style = "Regular" }
+bold   = { family = "JetBrainsMono Nerd Font Mono", style = "Bold" }
+italic = { family = "JetBrainsMono Nerd Font Mono", style = "Italic" }
+size   = 16.0
+
+[font.offset]
+x = 0
+y = 4  
+
+[cursor]
+style = { shape = "Block", blinking = "On" }
+blink_interval  = 500
+unfocused_hollow = true
+
+# ── Colors ─────────────────────────────────────
+[colors.primary]
+background = "#0a0a0a"   # sama persis kayak waybar pill bg
+foreground = "#e0e0e0"   # same as waybar primary text
+
+[colors.cursor]
+cursor = "#e0e0e0"
+text   = "#0a0a0a"
+
+[colors.selection]
+background = "#1e1e1e"
+text       = "#e0e0e0"
+
+[colors.search.matches]
+background = "#1e1e1e"
+foreground = "#aaaaaa"
+
+[colors.search.focused_match]
+background = "#ffaa55"   # waybar battery warning orange
+foreground = "#0a0a0a"
+
+# ── Normal colors ───────────────────────────────
+
+[colors.normal]
+black   = "#1e1e1e"      # dimmed (hidden files, comments)
+red     = "#ff5555"      # errors, deleted (waybar critical)
+green   = "#9ec867"      # executables, added
+yellow  = "#ffaa55"      # symlinks, warnings (waybar battery)
+blue    = "#6fa3e0"      # directories
+magenta = "#c09ae8"      # special files, branches
+cyan    = "#5ec4c4"      # pipes/sockets, info
+white   = "#e0e0e0"      # normal text (waybar primary)
+
+# ── Bright colors ───────────────────────────────
+
+[colors.bright]
+black   = "#444444"      # waybar inactive text
+red     = "#ff7070"
+green   = "#b4d97a"
+yellow  = "#ffc070"
+blue    = "#89b8f7"      # active directory / focus
+magenta = "#d0b0ff"
+cyan    = "#7adede"
+white   = "#ffffff"
+
+# ── Dim colors (unfocused) ───────────────────────
+[colors.dim]
+black   = "#0a0a0a"
+red     = "#6b2424"
+green   = "#3a5228"
+yellow  = "#6b4a1e"
+blue    = "#2a3f5e"
+magenta = "#4a3a6b"
+cyan    = "#1e4a4a"
+white   = "#444444"
+
+# ── Keybindings ──────
+[[keyboard.bindings]]
+key   = "Return"
+mods  = "Shift"
+chars = "\u001B\r"

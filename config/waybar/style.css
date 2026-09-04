@@ -1,0 +1,211 @@
+/* =============================================
+   WAYBAR - BLACK CLEAN THEME
+   GTK CSS compatible (no @keyframes)
+   ============================================= */
+
+* {
+    font-family: 'JetBrainsMono Nerd Font Mono', 'Font Awesome 6 Free', monospace;
+    font-size: 17px;
+    font-weight: 600;
+    min-height: 0;
+    border: none;
+    border-radius: 0;
+}
+
+/* ── Window ──────────────────────────────────── */
+window#waybar {
+    background: transparent;
+    color: #e0e0e0;
+}
+
+window#waybar.hidden {
+    opacity: 0.1;
+}
+
+/* ── Workspaces ──────────────────────────────── */
+#workspaces {
+    background: rgba(10, 10, 10, 0.90);
+    border-radius: 12px;
+    margin: 4px 0;
+    padding: 0 10px;
+}
+
+#workspaces button {
+    background: transparent;
+    color: #444444;
+    border-radius: 8px;
+    padding: 2px 7px;
+    margin: 2px;
+    transition: all 0.2s ease;
+    box-shadow: none;
+    border: none;
+}
+
+#workspaces button:hover {
+    background: rgba(255, 255, 255, 0.06);
+    color: #aaaaaa;
+    box-shadow: none;
+}
+
+#workspaces button.active {
+    padding: 2px 15px;
+    background: #e0e0e0;
+    color: #0a0a0a;
+    box-shadow: none;
+}
+
+#workspaces button.urgent {
+    background: rgba(255, 80, 80, 0.15);
+    color: #ff5555;
+}
+
+/* ── Shared pill style ───────────────────────── */
+#clock,
+#mpd,
+#pulseaudio,
+#power-profiles-daemon,
+#cpu,
+#backlight,
+#keyboard-state,
+#battery,
+#tray {
+    background: rgba(10, 10, 10, 0.90);
+    border-radius: 12px;
+    padding: 2px 12px;
+    margin: 4px 2px;
+    color: #e0e0e0;
+    transition: background 0.2s ease;
+}
+
+/* ── Clock ───────────────────────────────────── */
+#clock {
+    color: #e0e0e0;
+    font-weight: 700;
+}
+
+/* ── MPD ─────────────────────────────────────── */
+#mpd {
+    color: #aaaaaa;
+}
+
+#mpd.paused {
+    color: #444444;
+}
+
+#mpd.disconnected,
+#mpd.stopped {
+    color: #2a2a2a;
+    background: rgba(10, 10, 10, 0.50);
+}
+
+/* ── Pulseaudio ──────────────────────────────── */
+#pulseaudio {
+    color: #e0e0e0;
+}
+
+#pulseaudio:hover {
+    background: rgba(20, 20, 20, 0.95);
+}
+
+#pulseaudio.muted {
+    color: #444444;
+}
+
+/* ── Power Profiles Daemon ───────────────────── */
+#power-profiles-daemon {
+    padding: 2px 14px;
+}
+
+#power-profiles-daemon.performance {
+    color: #ff5555;
+}
+
+#power-profiles-daemon.balanced {
+    color: #e0e0e0;
+}
+
+#power-profiles-daemon.power-saver {
+    color: #aaaaaa;
+}
+
+/* ── CPU ─────────────────────────────────────── */
+#cpu {
+    color: #e0e0e0;
+}
+
+#cpu:hover {
+    background: rgba(20, 20, 20, 0.95);
+}
+
+/* ── Backlight ───────────────────────────────── */
+#backlight {
+    color: #aaaaaa;
+}
+
+/* ── Keyboard State ──────────────────────────── */
+#keyboard-state {
+    color: #e0e0e0;
+    padding: 2px 8px;
+}
+
+#keyboard-state > label {
+    padding: 0 4px;
+}
+
+#keyboard-state > label.locked {
+    color: #ff5555;
+    background: rgba(255, 85, 85, 0.10);
+    border-radius: 6px;
+}
+
+/* ── Battery ─────────────────────────────────── */
+#battery {
+    color: #e0e0e0;
+}
+
+#battery.warning:not(.charging) {
+    color: #ffaa55;
+}
+
+#battery.critical:not(.charging) {
+    color: #ff5555;
+    background: rgba(255, 85, 85, 0.10);
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#battery.charging,
+#battery.plugged {
+    color: #aaaaaa;
+}
+
+/* ── Tray ────────────────────────────────────── */
+#tray {
+    padding: 2px 8px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background: rgba(255, 85, 85, 0.12);
+    border-radius: 8px;
+}
+
+/* ── Tooltip ─────────────────────────────────── */
+tooltip {
+    background: rgba(10, 10, 10, 0.97);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    color: #e0e0e0;
+}
+
+tooltip label {
+    color: #e0e0e0;
+    padding: 2px 6px;
+}

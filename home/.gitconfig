@@ -1,0 +1,9 @@
+[user]
+	email = mantapucoco@gmail.com
+	name = ZaraGoza1303
+[credential]
+	helper = store
+[core]
+	editor = nvim
+[pull]
+	rebase = false

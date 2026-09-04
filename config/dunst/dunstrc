@@ -1,0 +1,162 @@
+# =============================================
+#   DUNST - BLACK CLEAN THEME
+#   Matching waybar vibe: dark, minimal, crisp
+# =============================================
+
+[global]
+    ### Display ###
+    monitor = 0
+    follow = none
+
+    ### Geometry ###
+    width = (0, 360)
+    height = (0, 300)
+    origin = top-right
+    offset = (20, 20)
+    scale = 0
+    notification_limit = 4
+
+    ### Progress bar ###
+    progress_bar = true
+    progress_bar_height = 8
+    progress_bar_frame_width = 0
+    progress_bar_min_width = 150
+    progress_bar_max_width = 300
+    progress_bar_corner_radius = 4
+    progress_bar_corners = all
+
+    ### Icon ###
+    icon_corner_radius = 6
+    icon_corners = all
+
+    indicate_hidden = yes
+    transparency = 0
+
+    ### Gap & Padding ###
+    separator_height = 0
+    padding = 14
+    horizontal_padding = 16
+    text_icon_padding = 10
+    gap_size = 6
+
+    ### Frame ###
+    frame_width = 1
+    frame_color = "#1e1e1e"
+
+    separator_color = "#1e1e1e"
+
+    sort = urgency_descending
+
+    ### Text ###
+    font = JetBrainsMono Nerd Font Mono 10
+
+    line_height = 4
+    markup = full
+
+    # Bold title, normal body
+    format = "<b>%s</b> <span alpha='75%'>%b</span>"
+
+    alignment = left
+    vertical_alignment = center
+    show_age_threshold = 60
+    ellipsize = middle
+    ignore_newline = no
+    stack_duplicates = true
+    hide_duplicate_count = false
+    show_indicators = no
+
+    ### Icons ###
+    enable_recursive_icon_lookup = true
+    icon_theme = "WhiteSur-dark"
+    icon_position = left
+    min_icon_size = 32
+    max_icon_size = 48
+
+    ### History ###
+    sticky_history = yes
+    history_length = 20
+
+    ### Misc ###
+    dmenu = /usr/bin/dmenu -p dunst:
+    browser = /usr/bin/xdg-open
+    always_run_script = true
+    title = Dunst
+    class = Dunst
+
+    ### Rounded corners — same radius as waybar pills ###
+    corner_radius = 12
+    corners = all
+
+    ignore_dbusclose = false
+
+    ### Mouse ###
+    mouse_left_click = close_current
+    mouse_middle_click = do_action, close_current
+    mouse_right_click = close_all
+
+[experimental]
+    per_monitor_dpi = false
+    pause_on_mouse_over = true
+
+
+# ── LOW ─────────────────────────────────────────
+# Dimmed, non-intrusive
+[urgency_low]
+    background  = "#0a0a0a"
+    foreground  = "#FFFFFF"
+    frame_color = "#141414"
+    timeout     = 6
+    default_icon = dialog-information
+
+# ── NORMAL ──────────────────────────────────────
+# Standard — matches waybar pill
+[urgency_normal]
+    background  = "#0a0a0ae6"
+    foreground  = "#e0e0e0"
+    frame_color = "#1e1e1e"
+    timeout     = 8
+    default_icon = dialog-information
+
+# ── CRITICAL ────────────────────────────────────
+# Red accent — matches waybar #battery.critical & #workspaces button.urgent
+[urgency_critical]
+    background  = "#1a0a0a"
+    foreground  = "#e0e0e0"
+    frame_color = "#ff5555"
+    timeout     = 0
+    default_icon = dialog-warning
+
+
+# ── RULES ───────────────────────────────────────
+
+# Volume / brightness OSD — subtle, faster timeout
+[osd]
+    summary = "(Volume|Brightness)*"
+    background  = "#0a0a0ae6"
+    frame_color = "#1e1e1e"
+    timeout     = 2
+    format      = "<b>%s</b> %b"
+
+# Music / MPD — secondary color like waybar #mpd
+[mpd]
+    desktop_entry = "cantata"
+    background  = "#0a0a0ae6"
+    foreground  = "#aaaaaa"
+    frame_color = "#1e1e1e"
+    timeout     = 4
+
+# Battery warning — orange like waybar #battery.warning
+[battery_warn]
+    summary = "*attery*"
+    background  = "#0a0a0a"
+    foreground  = "#ffaa55"
+    frame_color = "#ffaa55"
+    timeout     = 0
+
+# Screenshot / clipboard — quick dismiss
+[screenshot]
+    summary = "*creenshot*"
+    background  = "#0a0a0ae6"
+    foreground  = "#e0e0e0"
+    frame_color = "#1e1e1e"
+    timeout     = 3

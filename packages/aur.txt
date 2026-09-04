@@ -1,0 +1,14 @@
+yay
+brave-bin
+bibata-cursor-theme
+whitesur-icon-theme
+hyprmod
+wlogout
+stacer
+ngrok
+ollama-bin
+pgadmin4-desktop-bin
+win2xcur
+captive-browser-git
+f3
+dnslookup

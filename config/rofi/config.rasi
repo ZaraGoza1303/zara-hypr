@@ -1,0 +1,92 @@
+configuration {
+  display-drun: "Apps:";
+  drun-window: "Windows:";
+  drun-display-format: "{icon} {name}";
+  modes: "window,drun,run";
+  font: "JetBrainsMono Nerd Font 12";
+  show-icons: true;
+}
+
+@theme "/dev/null"
+
+* {
+  bg:         #0a0a0a;
+  second-bg:  #161616;
+  selected-bg:#1e1e1e;
+  text:       #e0e0e0;
+  subtext:    #aaaaaa;
+  accent:     #ff5555;
+
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  spacing: 0;
+}
+
+window {
+  width: 40%;
+  background-color: @bg;
+  border: 1px;
+  border-color: #1e1e1e;
+  border-radius: 12px;
+}
+
+mainbox {
+  padding: 15px;
+  children: [ inputbar, listview ];
+}
+
+/* ── Input ───────────────────────────────────── */
+inputbar {
+  background-color: @second-bg;
+  children: [ prompt, entry ];
+  border-radius: 8px;
+  margin: 0 0 12px 0;
+  padding: 10px;
+}
+
+prompt {
+  padding: 0 10px 0 5px;
+  text-color: @subtext;
+  font: "JetBrainsMono Nerd Font Bold 12";
+}
+
+entry {
+  text-color: @text;
+  placeholder: "Cari...";
+  placeholder-color: #444444;
+}
+
+/* ── List ────────────────────────────────────── */
+listview {
+  layout: vertical;
+  spacing: 4px;
+  lines: 8;
+  fixed-height: true;
+}
+
+element {
+  padding: 8px;
+  border-radius: 8px;
+  orientation: horizontal;
+  cursor: pointer;
+  text-color: @subtext;
+  background-color: transparent;
+}
+
+element-icon {
+  size: 24px;
+  padding: 0 10px 0 0;
+}
+
+element-text {
+  vertical-align: 0.5;
+  text-color: inherit;
+}
+
+/* ── Selected ────────────────────────────────── */
+element selected {
+  background-color: @selected-bg;
+  text-color: @text;
+}

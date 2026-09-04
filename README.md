@@ -67,8 +67,9 @@ zara-hypr/
 
 ## Keeping it up to date
 
-After changing configs on the system, run:
+After changing configs on the system, pull them into the repo, then commit & push:
 
 ```bash
-./sync.sh && git push
+./sync.sh
+git add -A && git commit -m "sync dots" && git push
 ```

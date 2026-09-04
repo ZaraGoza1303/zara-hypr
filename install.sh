@@ -10,10 +10,9 @@ SKIP_PKGS=0
 
 # 1. Install yay
 command -v yay >/dev/null || {
-    curl -L -o /tmp/yay.tar.gz https://aur.archlinux.org/cgit/aur.git/snapshot/yay.tar.gz
-    mkdir -p /tmp/yay-build && tar -xf /tmp/yay.tar.gz -C /tmp/yay-build --strip-components=1
+    git clone https://aur.archlinux.org/yay.git /tmp/yay-build
     (cd /tmp/yay-build && makepkg -si --noconfirm)
-    rm -rf /tmp/yay.tar.gz /tmp/yay-build
+    rm -rf /tmp/yay-build
 }
 
 # 2. Install packages (look-only, see packages/)

@@ -48,22 +48,13 @@ zara-hypr/
 ├── install.sh              # install (repo → system)
 ├── sync.sh                 # update repo (system → repo)
 ├── packages/
-│   ├── official.txt        # 44 official packages (look-only)
+│   ├── official.txt        # 45 official packages (look-only)
 │   └── aur.txt             # 5 AUR packages
 ├── config/                 # → ~/.config/
 ├── home/                   # → ~/ (.gitconfig, .gtkrc-2.0)
 ├── extra/themes/           # Nordic-darker-v40 (not from pacman)
 └── assets/wallpaper/       # arch.png
 ```
-
-## Notes
-
-- Package lists are kept **look-only**: Hyprland stack, waybar, rofi, dunst,
-  alacritty, fonts, theme, screenshot/volume/brightness tools, cava, nautilus.
-  Browsers, Ollama, databases, VPNs, etc. are **not** included — install those yourself.
-- `playerctl`, `hyprpolkitagent`, `xsettingsd` are included on purpose even though
-  the old system only had them as deps / didn't have them at all — my configs reference them.
-- GPU is AMD (`vulkan-radeon`). On NVIDIA, add your own drivers.
 
 ## Keeping it up to date
 
